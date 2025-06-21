@@ -1,0 +1,32 @@
+<main class="container my-5">
+    <h2 class="text-center mb-4 text-capitalize">{{ category }}</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4 mb-3" *ngFor="let item of items">
+            <div class="card h-100 animate-slideUp">
+                <div class="card-img-container">
+                    <img [src]="item.imagen" class="card-img-top" [ngClass]="item.formatoImg" alt="roboticos">
+                </div>
+                <div class="card-body text-center bg-2 d-flex flex-column">
+                    <h5 class="card-title text-white">{{ item.titulo }}</h5>
+                    <p class="card-text text-white mb-0">{{ item.descripcion }}</p>
+                    <p class="card-text text-white mt-auto">
+                        <img src="assets/img/supercredits.png" style="height: 2.5rem;">
+                        {{ item.precio }} Supercréditos
+                    </p>
+                </div>
+                <div class="card-footer bg-4 d-grid">
+                    <button *ngIf="sesion?.logueado && sesion?.tipo === 'superusuario'" class="btn btn-1"
+                        (click)="agregarAlCarrito(item)">
+                        Agregar al supercarrito
+                    </button>
+                    <p *ngIf="sesion?.logueado && sesion?.tipo === 'superadmin'" class="text-muted fst-italic">
+                        (Solo los usuarios pueden agregar al supercarrito)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-modal [titulo]="tituloAgregado" [visible]="mostrarModal" (cerrar)="cerrarModal()"></app-modal>
+</main>

@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Panel de Administración</h2>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios">
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.tipo | capitalize }}</td>
+                <td>
+                    <div class="d-flex gap-2">
+                        <!-- <button class="btn btn-2 btn-sm" (click)="eliminarUsuario(usuario.email)">
+                            <i class="fas fa-edit"></i>
+                            Editar
+                        </button> -->
+                        <button class="btn btn-danger btn-sm" (click)="eliminarUsuario(usuario.email)" [disabled]="usuario.tipo === 'superadmin'">
+                            <i class="fas fa-trash"></i>
+                            Eliminar
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

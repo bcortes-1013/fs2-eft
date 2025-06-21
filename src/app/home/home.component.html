@@ -1,0 +1,70 @@
+
+
+<main>
+    <div class="text-center bg-black mb-5 px-0">
+        <section class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 col-md-6 mb-4">
+                    <img src="assets/img/home.webp" alt="Supertienda Logo" class="img-fluid mb-3 animate-fadeIn" style="height: 350px;">
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <p class="text-portada-1 animate-fadeIn">Bienvenido a la Supertienda <br/> Aquí podrás adquirir todo lo necesario para liberar la galaxia</p>
+                    <p class="text-portada-1 animate-fadeIn"><strong>¡POR LA SUPERTIERRA!</strong></p>
+                    <p class="text-portada-2 animate-fadeIn">Sé un Héroe</p>
+                    <p class="text-portada-2 animate-fadeIn">Sé una Leyenda</p>
+                    <p class="text-portada-2 animate-fadeIn">Sé un Helldiver</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="container mb-5">
+        <div class="text-center mb-4">
+            <h1 class="animate-fadeIn">¡Listado Actualizado!</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+                <div class="card animate-slideUp ">
+                    <a [routerLink]="['/categoria', 'armaduras']" class="text-decoration-none text-dark">
+                        <img src="assets/img/armadura.webp" class="card-img-top img-categoria" alt="armadura" />
+                        <div class="card-body bg-1 text-center">
+                            <h5 class="card-title text-white">Armaduras</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+                <div class="card animate-slideUp">
+                    <a [routerLink]="['/categoria', 'armamento']" class="text-decoration-none text-dark">
+                        <img src="assets/img/armamento.webp" class="card-img-top img-categoria" alt="armamento" />
+                        <div class="card-body bg-1 text-center">
+                            <h5 class="card-title text-white">Armamento</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+                <div class="card categoria animate-slideUp">
+                    <a [routerLink]="['/categoria', 'estratagemas']" class="text-decoration-none text-dark">
+                        <img src="assets/img/estratagema.png" class="card-img-top img-categoria" alt="estratagema" />
+                        <div class="card-body bg-1 text-center">
+                            <h5 class="card-title text-white">Estratagemas</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+                <div class="card categoria animate-slideUp">
+                    <a [routerLink]="['/categoria', 'superdestructor']" class="text-decoration-none text-dark">
+                        <img src="assets/img/superdestructor.png" class="card-img-top img-categoria" alt="superdestructor" />
+                        <div class="card-body bg-1 text-center">
+                            <h5 class="card-title text-white">Superdestructor</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container mb-5">
+        <!-- <iframe src="https://www.youtube.com/embed/IF3lWZbiaH4" title="helldivers 2 - trailer" class="w-100" style="height: 500px; border: none;" allowfullscreen></iframe> -->
+    </section>
+</main>

@@ -1,0 +1,15 @@
+<div *ngIf="visible" class="modal show d-block" tabindex="-1" aria-labelledby="modalExitoLabel" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-1">
+                <h5 class="modal-title">Supercarrito</h5>
+            </div>
+            <div class="modal-body bg-4 text-center">
+                <p>Has agregado el ítem <strong>{{ titulo }}</strong></p>
+            </div>
+            <div class="modal-footer bg-4">
+                <button type="button" class="btn btn-1" (click)="cerrarModal()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+.card-img-container {
+    background-color: black;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-img-container .img-armaduras {
+    height: 100%;          
+    width: auto;           
+    object-fit: contain;     
+}
+
+.card-img-container .img-armamento {
+    height: auto;           
+    width: 100%;            
+    object-fit: contain;    
+}
+
+.card-img-container .img-estratagemas {
+    height: auto;       
+    width: 12rem;
+    object-fit: contain;
+}
+
+.card-img-container .img-superdestructor {
+    height: 100%;          
+    width: auto;           
+    object-fit: contain;   
+}
+
+.btn-1 {background-color: var(--color-1); color: var(--color-5);}
+.btn-2 {background-color: var(--color-2); color: var(--color-6);}
+.btn-3 {background-color: var(--color-5); color: var(--color-1);}
+
+.bg-1 {background-color: var(--color-1); color: var(--color-5);}
+.bg-2 {background-color: var(--color-2); color: var(--color-3);}
+.bg-3 {background-color: var(--color-3);}
+.bg-4 {background-color: var(--color-4); color: var(--color-6);}
+.bg-5 {background-color: var(--color-5);}
+.bg-6 {background-color: var(--color-6);}

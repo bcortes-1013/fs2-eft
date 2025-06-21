@@ -1,0 +1,14 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 100% del alto del viewport */
+}
+
+.content {
+  flex: 1; /* Ocupa todo el espacio disponible entre navbar y footer */
+}
