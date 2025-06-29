@@ -5,34 +5,34 @@
         <div class="card-body">
             <div class="mb-3">
             <label class="form-label fw-bold">Nombre</label>
-            <input [(ngModel)]="sesion.nombre" type="text" class="form-control">
+            <input [(ngModel)]="usuarioActivo.nombre" type="text" class="form-control">
             </div>
 
             <div class="mb-3">
             <label class="form-label fw-bold">Usuario</label>
-            <input [value]="sesion.usuario" type="text" class="form-control" disabled>
+            <input [value]="usuarioActivo.usuario" type="text" class="form-control disabled" disabled>
             </div>
 
             <div class="mb-3">
             <label class="form-label fw-bold">Email</label>
-            <input [(ngModel)]="sesion.email" type="email" class="form-control">
+            <input [(ngModel)]="usuarioActivo.email" type="email" class="form-control">
             </div>
 
             <div class="mb-3">
             <label class="form-label fw-bold">Contraseña</label>
-            <input [(ngModel)]="sesion.password" type="password" class="form-control">
+            <input [(ngModel)]="usuarioActivo.password" type="password" class="form-control">
             </div>
 
             <div class="mb-3">
             <label class="form-label fw-bold">Tipo de Usuario</label>
-            <input [value]="sesion.tipo" class="form-control" disabled>
+            <input [value]="usuarioActivo.tipo" class="form-control disabled" disabled>
             </div>
+
+            <div *ngIf="mensaje" class="alert alert-success text-center">{{ mensaje }}</div>
 
             <div class="d-grid">
                 <button class="btn btn-1" (click)="guardarCambios()">Guardar Cambios</button>
             </div>
-
-            <div class="text-success mt-3 text-center fw-bold" *ngIf="mensaje">{{ mensaje }}</div>
         </div>
     </div>
 </main>

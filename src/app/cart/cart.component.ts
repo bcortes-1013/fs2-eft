@@ -1,11 +1,21 @@
 import { Component } from '@angular/core';
 
+/**
+ * Componente que muestra el carrito de compras del usuario. Permite revisar y eliminar productos seleccionados.
+ */
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
+
+  /**
+   * Lista de productos en el carrito, cargada desde el almacenamiento local.
+   * Cada producto tiene un nombre, precio y cantidad.
+   */
+
   carrito: any[] = [];
   total = 0;
   claveCarrito = '';

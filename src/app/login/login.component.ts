@@ -3,12 +3,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
+/**
+ * Componente de autenticación que permite a los usuarios iniciar sesión en el sistema.
+ */
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  /**
+   * Formulario reactivo que contiene los campos de email y contraseña.
+   */
 
   loginForm!: FormGroup; // Formulario reactivo
   error: boolean = false;
@@ -48,6 +56,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('sesion', JSON.stringify({
         logueado: true,
         usuario: usuario.usuario,
+        nombre: usuario.nombre,
         tipo: usuario.tipo || 'superusuario'
       }));
 

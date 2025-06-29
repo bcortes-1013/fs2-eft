@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
 
+/**
+ * Componente para la gestión del panel de administración. Permite visualizar y ejecutar acciones con los usuarios.
+ */
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
+
+  /**
+   * Lista de usuarios superadministradores cargados desde el almacenamiento local.
+   */
+
   usuarios: any[] = [];
 
   ngOnInit(): void {

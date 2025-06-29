@@ -7,9 +7,10 @@ describe('ProfileComponent', () => {
   let fixture: ComponentFixture<ProfileComponent>;
 
   beforeEach(() => {
-    const sesionMock = { usuario: 'Helldiver' };
+    const sesionMock = { usuario: 'Helldiver 10', nombre: 'Helldiver 1' };
     const usuariosMock = [{
-      nombre: 'Helldiver',
+      nombre: 'Helldiver 1',
+      usuario: 'Helldiver 10',
       email: '1@helldiver.com',
       password: 'Hell123',
       tipo: 'superusuario'

@@ -1,11 +1,22 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+/**
+ * Componente que lista los servicios disponibles y sus descripciones, con opción de contratación.
+ */
+
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
+
+  /**
+   * Servicio de autenticación que maneja la sesión del usuario.
+   * Permite iniciar sesión, cerrar sesión, verificar si el superusuario está logueado y si es un superadmin.
+   * También permite agregar nuevos superusuarios al sistema.
+   */
+
   private sesionSubject = new BehaviorSubject<any>(this.getSesion());
   sesion$ = this.sesionSubject.asObservable();
 
@@ -16,6 +27,7 @@ export class AuthService {
     if (!usuariosStr || usuarios.length === 0) {
       const admin = {
         nombre: 'Admin',
+        usuario: 'Admin Supertierra',
         email: 'admin@supertierra.com',
         password: 'Admin123',
         tipo: 'superadmin'

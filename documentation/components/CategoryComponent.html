@@ -1,0 +1,1088 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">frontend documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CategoryComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/category/category.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente que maneja la visualización de categorías.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-category</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./category.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./category.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#category" >category</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#datos" >datos</a>
+                            </li>
+                            <li>
+                                <a href="#items" >items</a>
+                            </li>
+                            <li>
+                                <a href="#mostrarModal" >mostrarModal</a>
+                            </li>
+                            <li>
+                                <a href="#sesion" >sesion</a>
+                            </li>
+                            <li>
+                                <a href="#tituloAgregado" >tituloAgregado</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#agregarAlCarrito" >agregarAlCarrito</a>
+                            </li>
+                            <li>
+                                <a href="#cerrarModal" >cerrarModal</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#verCategoria" >verCategoria</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: ActivatedRoute, auth: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/category/category.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarAlCarrito"></a>
+                    <span class="name">
+                        <span ><b>agregarAlCarrito</b></span>
+                        <a href="#agregarAlCarrito"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarAlCarrito(item: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/category/category.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cerrarModal"></a>
+                    <span class="name">
+                        <span ><b>cerrarModal</b></span>
+                        <a href="#cerrarModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cerrarModal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="104"
+                                    class="link-to-prism">src/app/category/category.component.ts:104</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">src/app/category/category.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verCategoria"></a>
+                    <span class="name">
+                        <span ><b>verCategoria</b></span>
+                        <a href="#verCategoria"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>verCategoria(titulo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="99"
+                                    class="link-to-prism">src/app/category/category.component.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>titulo</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="category"></a>
+                    <span class="name">
+                        <span ><b>category</b></span>
+                        <a href="#category"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/category/category.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Categoría actual seleccionada por el usuario.
+Se obtiene de la ruta activa y se usa para filtrar los elementos a mostrar.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="datos"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>datos</b></span>
+                        <a href="#datos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    armaduras: [
+      { formatoImg: &#x27;img-armaduras&#x27;, titulo: &#x27;B-27 Comando Fortificado&#x27;, imagen: &#x27;assets/img/armadura/b27.webp&#x27;, precio: 3500, descripcion: &#x27;Proporciona una excelente protección contra el daño y es ideal para misiones de asalto. Su diseño robusto proporciona movilidad reducida en el campo de batalla&#x27;},
+      { formatoImg: &#x27;img-armaduras&#x27;, titulo: &#x27;CE-81 Juggernaut&#x27;, imagen: &#x27;assets/img/armadura/ce81.webp&#x27;, precio: 3000, descripcion: &#x27;Al contar con menor blindaje, esta armadura permite una movilidad excepcional. Ideal para misiones de infiltración y combate a corta distancia&#x27; },
+      { formatoImg: &#x27;img-armaduras&#x27;, titulo: &#x27;DP-40 Héroe de la federación&#x27;, imagen: &#x27;assets/img/armadura/dp40.webp&#x27;, precio: 2500, descripcion: &#x27;Balance entre protección y movilidad. Ideal para misiones de asalto y defensa. Su diseño versátil permite adaptarse a diferentes situaciones de combate&#x27; }
+    ],
+    armamento: [
+      { formatoImg: &#x27;img-armamento&#x27;, titulo: &#x27;Rompedora Incendiaria&#x27;, imagen: &#x27;assets/img/armamento/breaker.png&#x27;, precio: 1500, descripcion: &#x27;Con una excelente capacidad y daño constante de fuego, esta arma es ideal contra grupos de enemigos con poco blindaje&#x27; },
+      { formatoImg: &#x27;img-armamento&#x27;, titulo: &#x27;Dominador JAR&#x27;, imagen: &#x27;assets/img/armamento/dominator.png&#x27;, precio: 2500, descripcion: &#x27;A pesar de su poca capacidad, su potencia de fuego es devastadora. Ideal para eliminar enemigos blindados y objetivos de alto valor&#x27; },
+      { formatoImg: &#x27;img-armamento&#x27;, titulo: &#x27;PLAS-101 Purificador&#x27;, imagen: &#x27;assets/img/armamento/plas101.png&#x27;, precio: 2000, descripcion: &#x27;Con capacidad limitada, proporciona daño de área y daño adicional a enemigos blindados. Devastadora contra grupos de enemigos y objetivos blindados&#x27; }
+    ],
+    estratagemas: [
+      { formatoImg: &#x27;img-estratagemas&#x27;, titulo: &#x27;Laser Orbital&#x27;, imagen: &#x27;assets/img/estratagema/laser.png&#x27;, precio: 4500, descripcion: &#x27;El superdestructor proporciona un ataque de láser devastador desde el espacio, ideal para eliminar grandes grupos de enemigos o estructuras enemigas&#x27; },
+      { formatoImg: &#x27;img-estratagemas&#x27;, titulo: &#x27;Mortero&#x27;, imagen: &#x27;assets/img/estratagema/mortero.png&#x27;, precio: 3500, descripcion: &#x27;Unidad de apoyo en tierra, el mortero proporciona un ataque de artillería de largo alcance que fija objetivos automáticamente con un gran daño de área&#x27; },
+      { formatoImg: &#x27;img-estratagemas&#x27;, titulo: &#x27;Cañón Quasar&#x27;, imagen: &#x27;assets/img/estratagema/quasar.png&#x27;, precio: 3000, descripcion: &#x27;Arma de apoyo, con una lenta recarga y un único disparo se compensa con un daño masivo además de un gran alcance, incluso para derribar naves y tanques&#x27; }
+    ],
+    superdestructor: [
+      { formatoImg: &#x27;img-superdestructor&#x27;, titulo: &#x27;Orbital&#x27;, imagen: &#x27;assets/img/superdestructor/orbital.webp&#x27;, precio: 7000, descripcion: &#x27;Aumenta los llamados de armas orbitales, además aumenta el radio de ataque en un 50% y el daño en un 25%&#x27; },
+      { formatoImg: &#x27;img-superdestructor&#x27;, titulo: &#x27;Puente&#x27;, imagen: &#x27;assets/img/superdestructor/puente.webp&#x27;, precio: 6000, descripcion: &#x27;Disminuye el tiempo de despliegue de apoyos robóticos y armas de apoyo en un 15%, además las cápsulas Hell causan una explosión al aterrizar&#x27; },
+      { formatoImg: &#x27;img-superdestructor&#x27;, titulo: &#x27;Robótico&#x27;, imagen: &#x27;assets/img/superdestructor/roboticos.webp&#x27;, precio: 6500, descripcion: &#x27;Disminuye el tiempo de despliegue de unidades robóticas y aumenta su efectividad en combate, fijando objetivos más rápido&#x27; },
+      { formatoImg: &#x27;img-superdestructor&#x27;, titulo: &#x27;Póster de Balatro Balatrez&#x27;, imagen: &#x27;assets/img/superdestructor/jimbo.webp&#x27;, precio: 1, descripcion: &#x27;No proporciona mejoras, pero se ve bien pegado en la ventana de tu nave&#x27; }
+    ]
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/category/category.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="items"></a>
+                    <span class="name">
+                        <span ><b>items</b></span>
+                        <a href="#items"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/category/category.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarModal"></a>
+                    <span class="name">
+                        <span ><b>mostrarModal</b></span>
+                        <a href="#mostrarModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/category/category.component.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sesion"></a>
+                    <span class="name">
+                        <span ><b>sesion</b></span>
+                        <a href="#sesion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/category/category.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tituloAgregado"></a>
+                    <span class="name">
+                        <span ><b>tituloAgregado</b></span>
+                        <a href="#tituloAgregado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/category/category.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { AuthService } from &#x27;../services/auth.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+/**
+ * Componente que maneja la visualización de categorías.
+ */
+
+@Component({
+  selector: &#x27;app-category&#x27;,
+  templateUrl: &#x27;./category.component.html&#x27;,
+  styleUrls: [&#x27;./category.component.css&#x27;]
+})
+export class CategoryComponent implements OnInit {
+
+  /**
+   * Categoría actual seleccionada por el usuario.
+   * Se obtiene de la ruta activa y se usa para filtrar los elementos a mostrar.
+   */
+
+  category &#x3D; &#x27;&#x27;;
+  items: any[] &#x3D; [];
+
+  private datos: any &#x3D; {
+    armaduras: [
+      { formatoImg: &#x27;img-armaduras&#x27;, titulo: &#x27;B-27 Comando Fortificado&#x27;, imagen: &#x27;assets/img/armadura/b27.webp&#x27;, precio: 3500, descripcion: &#x27;Proporciona una excelente protección contra el daño y es ideal para misiones de asalto. Su diseño robusto proporciona movilidad reducida en el campo de batalla&#x27;},
+      { formatoImg: &#x27;img-armaduras&#x27;, titulo: &#x27;CE-81 Juggernaut&#x27;, imagen: &#x27;assets/img/armadura/ce81.webp&#x27;, precio: 3000, descripcion: &#x27;Al contar con menor blindaje, esta armadura permite una movilidad excepcional. Ideal para misiones de infiltración y combate a corta distancia&#x27; },
+      { formatoImg: &#x27;img-armaduras&#x27;, titulo: &#x27;DP-40 Héroe de la federación&#x27;, imagen: &#x27;assets/img/armadura/dp40.webp&#x27;, precio: 2500, descripcion: &#x27;Balance entre protección y movilidad. Ideal para misiones de asalto y defensa. Su diseño versátil permite adaptarse a diferentes situaciones de combate&#x27; }
+    ],
+    armamento: [
+      { formatoImg: &#x27;img-armamento&#x27;, titulo: &#x27;Rompedora Incendiaria&#x27;, imagen: &#x27;assets/img/armamento/breaker.png&#x27;, precio: 1500, descripcion: &#x27;Con una excelente capacidad y daño constante de fuego, esta arma es ideal contra grupos de enemigos con poco blindaje&#x27; },
+      { formatoImg: &#x27;img-armamento&#x27;, titulo: &#x27;Dominador JAR&#x27;, imagen: &#x27;assets/img/armamento/dominator.png&#x27;, precio: 2500, descripcion: &#x27;A pesar de su poca capacidad, su potencia de fuego es devastadora. Ideal para eliminar enemigos blindados y objetivos de alto valor&#x27; },
+      { formatoImg: &#x27;img-armamento&#x27;, titulo: &#x27;PLAS-101 Purificador&#x27;, imagen: &#x27;assets/img/armamento/plas101.png&#x27;, precio: 2000, descripcion: &#x27;Con capacidad limitada, proporciona daño de área y daño adicional a enemigos blindados. Devastadora contra grupos de enemigos y objetivos blindados&#x27; }
+    ],
+    estratagemas: [
+      { formatoImg: &#x27;img-estratagemas&#x27;, titulo: &#x27;Laser Orbital&#x27;, imagen: &#x27;assets/img/estratagema/laser.png&#x27;, precio: 4500, descripcion: &#x27;El superdestructor proporciona un ataque de láser devastador desde el espacio, ideal para eliminar grandes grupos de enemigos o estructuras enemigas&#x27; },
+      { formatoImg: &#x27;img-estratagemas&#x27;, titulo: &#x27;Mortero&#x27;, imagen: &#x27;assets/img/estratagema/mortero.png&#x27;, precio: 3500, descripcion: &#x27;Unidad de apoyo en tierra, el mortero proporciona un ataque de artillería de largo alcance que fija objetivos automáticamente con un gran daño de área&#x27; },
+      { formatoImg: &#x27;img-estratagemas&#x27;, titulo: &#x27;Cañón Quasar&#x27;, imagen: &#x27;assets/img/estratagema/quasar.png&#x27;, precio: 3000, descripcion: &#x27;Arma de apoyo, con una lenta recarga y un único disparo se compensa con un daño masivo además de un gran alcance, incluso para derribar naves y tanques&#x27; }
+    ],
+    superdestructor: [
+      { formatoImg: &#x27;img-superdestructor&#x27;, titulo: &#x27;Orbital&#x27;, imagen: &#x27;assets/img/superdestructor/orbital.webp&#x27;, precio: 7000, descripcion: &#x27;Aumenta los llamados de armas orbitales, además aumenta el radio de ataque en un 50% y el daño en un 25%&#x27; },
+      { formatoImg: &#x27;img-superdestructor&#x27;, titulo: &#x27;Puente&#x27;, imagen: &#x27;assets/img/superdestructor/puente.webp&#x27;, precio: 6000, descripcion: &#x27;Disminuye el tiempo de despliegue de apoyos robóticos y armas de apoyo en un 15%, además las cápsulas Hell causan una explosión al aterrizar&#x27; },
+      { formatoImg: &#x27;img-superdestructor&#x27;, titulo: &#x27;Robótico&#x27;, imagen: &#x27;assets/img/superdestructor/roboticos.webp&#x27;, precio: 6500, descripcion: &#x27;Disminuye el tiempo de despliegue de unidades robóticas y aumenta su efectividad en combate, fijando objetivos más rápido&#x27; },
+      { formatoImg: &#x27;img-superdestructor&#x27;, titulo: &#x27;Póster de Balatro Balatrez&#x27;, imagen: &#x27;assets/img/superdestructor/jimbo.webp&#x27;, precio: 1, descripcion: &#x27;No proporciona mejoras, pero se ve bien pegado en la ventana de tu nave&#x27; }
+    ]
+  };
+
+  constructor(private route: ActivatedRoute, private auth: AuthService, private router: Router) { }
+
+  sesion: any &#x3D; null;
+
+  ngOnInit(): void {
+    const sesionStr &#x3D; localStorage.getItem(&#x27;sesion&#x27;);
+    this.sesion &#x3D; sesionStr ? JSON.parse(sesionStr) : null;
+
+    this.route.params.subscribe(params &#x3D;&gt; {
+      this.category &#x3D; params[&#x27;nombre&#x27;];
+      this.items &#x3D; this.datos[this.category] || [];
+    });
+  }
+
+
+  agregarAlCarrito(item: any) {
+    const sesionStr &#x3D; localStorage.getItem(&#x27;sesion&#x27;);
+    const sesion &#x3D; sesionStr ? JSON.parse(sesionStr) : null;
+
+    if (!sesion || sesion.tipo !&#x3D;&#x3D; &#x27;superusuario&#x27;) {
+      alert(&#x27;Debes iniciar sesión como usuario para agregar al carrito.&#x27;);
+      return;
+    }
+
+    const claveCarrito &#x3D; &#x27;carrito_&#x27; + sesion.email;
+    const carritoStr &#x3D; localStorage.getItem(claveCarrito);
+    const carrito &#x3D; carritoStr ? JSON.parse(carritoStr) : [];
+
+    const index &#x3D; carrito.findIndex((index: any) &#x3D;&gt; index.nombre &#x3D;&#x3D;&#x3D; item.titulo);
+
+    if (index &gt;&#x3D; 0) {
+      carrito[index].cantidad++;
+    } else {
+      carrito.push({
+        nombre: item.titulo,
+        category: this.category,
+        precio: item.precio,
+        cantidad: 1
+      });
+    }
+
+    localStorage.setItem(claveCarrito, JSON.stringify(carrito));
+
+    this.verCategoria(item.titulo);
+  }
+
+  // Modal
+  tituloAgregado: string &#x3D; &#x27;&#x27;;
+  mostrarModal: boolean &#x3D; false;
+
+  verCategoria(titulo: string) {
+    this.tituloAgregado &#x3D; titulo;
+    this.mostrarModal &#x3D; true;
+  }
+
+  cerrarModal() {
+    this.mostrarModal &#x3D; false;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;container my-5&quot;&gt;
+    &lt;h2 class&#x3D;&quot;text-center mb-4 text-capitalize&quot;&gt;{{ category }}&lt;/h2&gt;
+
+    &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
+        &lt;div class&#x3D;&quot;col-12 col-md-6 col-lg-4 mb-3&quot; *ngFor&#x3D;&quot;let item of items&quot;&gt;
+            &lt;div class&#x3D;&quot;card h-100 animate-slideUp&quot;&gt;
+                &lt;div class&#x3D;&quot;card-img-container&quot;&gt;
+                    &lt;img [src]&#x3D;&quot;item.imagen&quot; class&#x3D;&quot;card-img-top&quot; [ngClass]&#x3D;&quot;item.formatoImg&quot; alt&#x3D;&quot;roboticos&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;card-body text-center bg-2 d-flex flex-column&quot;&gt;
+                    &lt;h5 class&#x3D;&quot;card-title text-white&quot;&gt;{{ item.titulo }}&lt;/h5&gt;
+                    &lt;p class&#x3D;&quot;card-text text-white mb-0&quot;&gt;{{ item.descripcion }}&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;card-text text-white mt-auto&quot;&gt;
+                        &lt;img src&#x3D;&quot;assets/img/supercredits.png&quot; style&#x3D;&quot;height: 2.5rem;&quot;&gt;
+                        {{ item.precio }} Supercréditos
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;card-footer bg-4 d-grid&quot;&gt;
+                    &lt;button *ngIf&#x3D;&quot;sesion?.logueado &amp;&amp; sesion?.tipo &#x3D;&#x3D;&#x3D; &#x27;superusuario&#x27;&quot; class&#x3D;&quot;btn btn-1&quot;
+                        (click)&#x3D;&quot;agregarAlCarrito(item)&quot;&gt;
+                        Agregar al supercarrito
+                    &lt;/button&gt;
+                    &lt;p *ngIf&#x3D;&quot;sesion?.logueado &amp;&amp; sesion?.tipo &#x3D;&#x3D;&#x3D; &#x27;superadmin&#x27;&quot; class&#x3D;&quot;text-muted fst-italic&quot;&gt;
+                        (Solo los usuarios pueden agregar al supercarrito)
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;app-modal [titulo]&#x3D;&quot;tituloAgregado&quot; [visible]&#x3D;&quot;mostrarModal&quot; (cerrar)&#x3D;&quot;cerrarModal()&quot;&gt;&lt;/app-modal&gt;
+&lt;/main&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./category.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.card-img-container {
+    background-color: black;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-img-container .img-armaduras {
+    height: 100%;          
+    width: auto;           
+    object-fit: contain;     
+}
+
+.card-img-container .img-armamento {
+    height: auto;           
+    width: 100%;            
+    object-fit: contain;    
+}
+
+.card-img-container .img-estratagemas {
+    height: auto;       
+    width: 12rem;
+    object-fit: contain;
+}
+
+.card-img-container .img-superdestructor {
+    height: 100%;          
+    width: auto;           
+    object-fit: contain;   
+}
+
+.btn-1 {background-color: var(--color-1); color: var(--color-5);}
+.btn-2 {background-color: var(--color-2); color: var(--color-6);}
+.btn-3 {background-color: var(--color-5); color: var(--color-1);}
+
+.bg-1 {background-color: var(--color-1); color: var(--color-5);}
+.bg-2 {background-color: var(--color-2); color: var(--color-3);}
+.bg-3 {background-color: var(--color-3);}
+.bg-4 {background-color: var(--color-4); color: var(--color-6);}
+.bg-5 {background-color: var(--color-5);}
+.bg-6 {background-color: var(--color-6);}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main class="container my-5">    <h2 class="text-center mb-4 text-capitalize">{{ category }}</h2>    <div class="row justify-content-center">        <div class="col-12 col-md-6 col-lg-4 mb-3" *ngFor="let item of items">            <div class="card h-100 animate-slideUp">                <div class="card-img-container">                    <img [src]="item.imagen" class="card-img-top" [ngClass]="item.formatoImg" alt="roboticos">                </div>                <div class="card-body text-center bg-2 d-flex flex-column">                    <h5 class="card-title text-white">{{ item.titulo }}</h5>                    <p class="card-text text-white mb-0">{{ item.descripcion }}</p>                    <p class="card-text text-white mt-auto">                        <img src="assets/img/supercredits.png" style="height: 2.5rem;">                        {{ item.precio }} Supercréditos                    </p>                </div>                <div class="card-footer bg-4 d-grid">                    <button *ngIf="sesion?.logueado && sesion?.tipo === \'superusuario\'" class="btn btn-1"                        (click)="agregarAlCarrito(item)">                        Agregar al supercarrito                    </button>                    <p *ngIf="sesion?.logueado && sesion?.tipo === \'superadmin\'" class="text-muted fst-italic">                        (Solo los usuarios pueden agregar al supercarrito)                    </p>                </div>            </div>        </div>    </div>    <app-modal [titulo]="tituloAgregado" [visible]="mostrarModal" (cerrar)="cerrarModal()"></app-modal></main></div>'
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoryComponent', 'selector': 'app-category'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RecoverComponent', 'selector': 'app-recover'},{'name': 'RegisterComponent', 'selector': 'app-register'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CategoryComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CategoryComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -2,12 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
 
+/**
+  * Componente para el registro de nuevos superusuarios en el sistema.
+  */
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
+  /**
+   * Formulario reactivo que contiene los campos necesarios para el registro de un nuevo superusuario.
+   * Incluye validaciones para nombre, usuario, email, fecha de nacimiento, contraseña y confirmación de contraseña.
+   * También incluye validaciones personalizadas para asegurar que la edad mínima sea de 14 años y que las contraseñas coincidan.
+   */
 
   registerForm!: FormGroup; // Formulario reactivo
   error: string = '';

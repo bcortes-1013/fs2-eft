@@ -3,12 +3,22 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
+/**
+ * Componente que maneja la visualización de categorías.
+ */
+
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
+
+  /**
+   * Categoría actual seleccionada por el usuario.
+   * Se obtiene de la ruta activa y se usa para filtrar los elementos a mostrar.
+   */
+
   category = '';
   items: any[] = [];
 
@@ -55,7 +65,7 @@ export class CategoryComponent implements OnInit {
     const sesionStr = localStorage.getItem('sesion');
     const sesion = sesionStr ? JSON.parse(sesionStr) : null;
 
-    if (!sesion || sesion.tipo !== 'usuario') {
+    if (!sesion || sesion.tipo !== 'superusuario') {
       alert('Debes iniciar sesión como usuario para agregar al carrito.');
       return;
     }

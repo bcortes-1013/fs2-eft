@@ -1,12 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+/**
+ * Componente para la recuperación de contraseña.
+ */
+
 @Component({
   selector: 'app-recover',
   templateUrl: './recover.component.html',
   styleUrls: ['./recover.component.css']
 })
 export class RecoverComponent implements OnInit {
+
+  /**
+   * Formulario reactivo que contiene el campo de email para la recuperación de contraseña.
+   */
+
   recoverForm!: FormGroup; // Formulario reactivo
   mensaje = '';
   error = '';
@@ -25,7 +34,7 @@ export class RecoverComponent implements OnInit {
     this.error = '';
 
     if (this.recoverForm.invalid) {
-      this.recoverForm.markAllAsTouched(); // <- Aquí fuerzas mostrar errores
+      this.recoverForm.markAllAsTouched();
       return;
     }
 
