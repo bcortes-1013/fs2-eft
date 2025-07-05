@@ -1,0 +1,33 @@
+[
+    {
+        "usuario": "John Helldiver",
+        "fechaCompra": "2025-07-01",
+        "cantidadProductos": 5,
+        "total": 2000
+    },
+    {
+        "usuario": "Sara Moon",
+        "fechaCompra": "2025-03-01",
+        "cantidadProductos": 5,
+        "total": 2000
+    },
+    {
+        "usuario": "Jane Doe",
+        "fechaCompra": "2025-02-02",
+        "cantidadProductos": 3,
+        "total": 1500
+    },
+    {
+        "usuario": "Alice Mordur",
+        "fechaCompra": "2025-04-03",
+        "cantidadProductos": 10,
+        "total": 3000
+    },
+    {
+        "usuario": "Cane Helldiver",
+        "fechaCompra": "2025-06-04",
+        "cantidadProductos": 7,
+        "total": 2500
+    }
+] 
+     

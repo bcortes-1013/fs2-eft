@@ -1,6 +1,5 @@
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Panel de Administración</h2>
-
+    <h2 class="text-center mb-4">Administración de usuarios</h2>
     <table class="table table-bordered table-hover">
         <thead class="table-dark">
             <tr>
@@ -27,6 +26,25 @@
                         </button>
                     </div>
                 </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 class="text-center mt-5 mb-4">Registro de Superventas</h2>
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Usuario</th>
+                <th>Fecha compra</th>
+                <th>Cantidad productos</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let venta of ventas">
+                <td>{{ venta.usuario }}</td>
+                <td>{{ venta.fechaCompra | date: 'dd-MM-yy' }}</td>
+                <td>{{ venta.cantidadProductos }}</td>
+                <td>{{ venta.total }} Supercréditos</td>
             </tr>
         </tbody>
     </table>

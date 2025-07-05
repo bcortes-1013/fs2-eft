@@ -17,6 +17,7 @@ import { ModalComponent } from './modal/modal.component';
 import { AdminComponent } from './admin/admin.component';
 import { RecoverComponent } from './recover/recover.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

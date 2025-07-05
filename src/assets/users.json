@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "nombre": "Admin",
+        "usuario": "Admin Supertierra",
+        "email": "admin@supertierra.com",
+        "password": "Admin123",
+        "tipo": "superadmin",
+        "fechaNacimiento": ""
+    }
+] 
+     
