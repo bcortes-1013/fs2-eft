@@ -8,3 +8,15 @@
 .bg-4 {background-color: var(--color-4); color: var(--color-6);}
 .bg-5 {background-color: var(--color-5);}
 .bg-6 {background-color: var(--color-6);}
+
+.modal.show.d-block::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: -1;
+}

@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
     this.error = '';
     this.exito = '';
 
-    console.log(this.registerForm.value);
+    // console.log(this.registerForm.value);
 
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();

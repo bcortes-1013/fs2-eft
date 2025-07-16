@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { CartComponent } from './cart/cart.component';
 import { RecoverComponent } from './recover/recover.component';
 import { AdminComponent } from './admin/admin.component';
+import { PurchaseListComponent } from './purchase-list/purchase-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent  },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'categoria/:nombre', component: CategoryComponent },
   { path: 'perfil', component: ProfileComponent  },
   { path: 'carrito', component: CartComponent  },
+  { path: 'historial', component: PurchaseListComponent  },
   { path: 'recuperar', component: RecoverComponent  },
   { path: 'admin', component: AdminComponent  },
   { path: '**', redirectTo: '' }

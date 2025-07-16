@@ -17,7 +17,7 @@ export class AdminComponent {
    */
 
   usuarios: any[] = [];
-  ventas: any[] = [];
+  historial: any[] = [];
   error: any = null;
 
   constructor(private saleService: SaleService) {}
@@ -28,14 +28,22 @@ export class AdminComponent {
     if (data) {
       this.usuarios = JSON.parse(data);
     }
-    this.saleService.getVentas().subscribe({
-      next: (res) => this.ventas = res,
-      error: (err) => this.error = err
-    });
+    // this.saleService.getVentas().subscribe({
+    //   next: (res) => this.ventas = res,
+    //   error: (err) => this.error = err
+    // });
+    this.historial = JSON.parse(localStorage.getItem('historial') || '[]');
   }
 
   eliminarUsuario(correo: string): void {
     this.usuarios = this.usuarios.filter(u => u.email !== correo);
     localStorage.setItem('superusuarios', JSON.stringify(this.usuarios));
+  }
+
+  getTotal(compra: any[]): number {
+    if (!compra || !Array.isArray(compra)) {
+      return 0;
+    }
+    return compra.reduce((total, p) => total + (p.cantidad * p.precio), 0);
   }
 }

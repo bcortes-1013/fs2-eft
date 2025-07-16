@@ -30,21 +30,23 @@
         </tbody>
     </table>
     <h2 class="text-center mt-5 mb-4">Registro de Superventas</h2>
-    <table class="table table-bordered table-hover">
-        <thead class="table-dark">
+    <table *ngIf="historial.length > 0" class="table table-striped text-center">
+        <thead>
             <tr>
-                <th>Usuario</th>
-                <th>Fecha compra</th>
-                <th>Cantidad productos</th>
-                <th>Total</th>
+            <th>Usuario</th>
+            <th>Ítems</th>
+            <th>Total</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let venta of ventas">
-                <td>{{ venta.usuario }}</td>
-                <td>{{ venta.fechaCompra | date: 'dd-MM-yy' }}</td>
-                <td>{{ venta.cantidadProductos }}</td>
-                <td>{{ venta.total }} Supercréditos</td>
+            <tr *ngFor="let item of historial; let i = index">
+                <td>{{ item.usuario }}</td>
+                <td>
+                    <li *ngFor="let producto of item.compra">
+                        {{ producto.cantidad }} x {{ producto.nombre }} ({{ producto.precio }}) - {{ producto.category | capitalize }}
+                    </li>
+                </td>
+                <td><img src="assets/img/supercredits.png" style="height: 2rem;"> {{ getTotal(item.compra) }}</td>
             </tr>
         </tbody>
     </table>

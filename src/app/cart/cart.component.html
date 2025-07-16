@@ -1,5 +1,5 @@
 <main class="container my-5">
-    <h2 class="text-center mb-4">Mi Carrito</h2>
+    <h2 class="text-center mb-4">Supercarrito</h2>
     <div *ngIf="carrito.length === 0" class="alert bg-2 text-center">
         Tu carrito está vacío
     </div>
@@ -36,9 +36,31 @@
     Total: {{ total }} Supercréditos
     </div>
 
+    <h6 class="text-center my-4" *ngIf="carrito.length > 0">Método de pago: SuperVisa</h6>
+
     <div *ngIf="carrito.length > 0" class="d-flex justify-content-center mt-4 gap-3">
-    <button class="btn btn-3" (click)="vaciarCarrito()">Vaciar Carrito</button>
-    <button class="btn btn-1" (click)="comprar()">Comprar</button>
+        <button class="btn btn-3" (click)="vaciarCarrito()">Vaciar Carrito</button>
+        <button class="btn btn-1" (click)="comprar()">Comprar</button>
+    </div>
+
+    <div *ngIf="visible" class="modal modal-lg show d-block" tabindex="-1" aria-labelledby="modalExitoLabel" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-1">
+                    <h5 class="modal-title">Pedido realizado con éxito</h5>
+                </div>
+                <div class="modal-body bg-4 text-center">
+                    <img src="assets/img/helldiver-icon.webp" class="img-fluid" alt="Icono Helldiver" style="height: 150px;">
+                    <h2 class="mt-4">¡Helldiver, la Supertierra valora tu compra!</h2>
+                    <h3>El Ministerio de la Prosperidad prepará tu envío lo antes posible</h3>
+                    <small><em>*El pedido puede perderse de camino debido a los Autómatas o Termínidos enemigos de la democracia, en caso de ocurrir te recomendamos realizar tu pedido nuevamente*</em></small><br/>
+                    <small><em>*No hay reembolsos*</em></small>
+                </div>
+                <div class="modal-footer bg-4">
+                    <button type="button" class="btn btn-1" (click)="cerrarModal()">Aceptar</button>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 

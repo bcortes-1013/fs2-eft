@@ -29,8 +29,8 @@ export class ProfileComponent {
     const usuariosStr = localStorage.getItem('superusuarios');
     this.usuarios = usuariosStr ? JSON.parse(usuariosStr) : [];
 
-    console.log("Usuarios", this.usuarios);
-    console.log("Sesion", this.sesion);
+    // console.log("Usuarios", this.usuarios);
+    // console.log("Sesion", this.sesion);
 
     // Buscar usuario completo y sincronizar
     const usuarioEncontrado = this.usuarios.find(u => u.usuario === this.sesion.usuario);

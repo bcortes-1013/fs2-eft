@@ -36,15 +36,3 @@ th{
   color: var(--color-5) !important;
   font-weight: bold;
 }
-
-.modal.show.d-block::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  z-index: -1;
-}

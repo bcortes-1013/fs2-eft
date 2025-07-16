@@ -20,8 +20,11 @@
                         (click)="agregarAlCarrito(item)">
                         Agregar al supercarrito
                     </button>
+                    <button *ngElse class="btn btn-1" disabled>
+                        Debes iniciar sesión para agregar
+                    </button>
                     <p *ngIf="sesion?.logueado && sesion?.tipo === 'superadmin'" class="text-muted fst-italic">
-                        (Solo los usuarios pueden agregar al supercarrito)
+                        Solo para superusuarios
                     </p>
                 </div>
             </div>

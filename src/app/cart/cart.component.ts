@@ -19,6 +19,7 @@ export class CartComponent {
   carrito: any[] = [];
   total = 0;
   claveCarrito = '';
+  visible: boolean = false;
 
   ngOnInit(): void {
     const sesionStr = localStorage.getItem('sesion');
@@ -47,12 +48,22 @@ export class CartComponent {
   }
 
   comprar() {
-    if (this.carrito.length === 0) {
-      alert('Tu carrito está vacío.');
-      return;
-    }
+    const audio = new Audio('assets/sound/sonido_exito.mp3');
+    audio.play().catch(e => console.error('Error al reproducir sonido:', e));
+    this.visible = true;
 
-    alert('¡Compra realizada con éxito!');
+    const sesionStr = localStorage.getItem('sesion');
+    const sesion = sesionStr ? JSON.parse(sesionStr) : null;
+
+    const registroCompra = {
+      usuario: sesion.usuario,
+      compra: this.carrito,
+    };
+
+    const historial = JSON.parse(localStorage.getItem('historial') || '[]');
+    historial.push(registroCompra);
+    localStorage.setItem('historial', JSON.stringify(historial));
+
     this.vaciarCarrito();
   }
 
@@ -62,5 +73,9 @@ export class CartComponent {
     this.carrito[index].cantidad = nuevaCantidad;
     localStorage.setItem(this.claveCarrito, JSON.stringify(this.carrito));
     this.cargarCarrito();
+  }
+
+  cerrarModal() {
+    this.visible = false;
   }
 }

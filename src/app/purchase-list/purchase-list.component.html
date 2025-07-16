@@ -1,0 +1,28 @@
+<main class="container my-5">
+    <h2 class="text-center mb-4">Historial de pedidos</h2>
+    <div *ngIf="historialFiltrado.length === 0" class="alert bg-2 text-center">
+        Tu historial de compras está vacío
+    </div>
+
+    <table *ngIf="historialFiltrado.length > 0" class="table table-striped text-center">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Ítems</th>
+            <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of historialFiltrado; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>
+                    <li *ngFor="let producto of item.compra">
+                        {{ producto.cantidad }} x {{ producto.nombre }} ({{ producto.precio }}) - {{ producto.category | capitalize }}
+                    </li>
+                </td>
+                <td><img src="assets/img/supercredits.png" style="height: 2rem;"> {{ getTotal(item.compra) }}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+

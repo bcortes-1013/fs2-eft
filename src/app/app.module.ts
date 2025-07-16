@@ -18,6 +18,7 @@ import { AdminComponent } from './admin/admin.component';
 import { RecoverComponent } from './recover/recover.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { PurchaseListComponent } from './purchase-list/purchase-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     ModalComponent,
     AdminComponent,
     RecoverComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    PurchaseListComponent
   ],
   imports: [
     BrowserModule,
